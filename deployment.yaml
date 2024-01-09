@@ -18,3 +18,17 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-express-service
+spec:
+  selector:
+    app: hello-world-express
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer

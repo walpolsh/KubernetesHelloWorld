@@ -1,11 +1,23 @@
-# What does this project demonstrate?
+# Hello World Express on AKS
 
-I successfully deployed this simple Node.js server to a cloud-based Kubernetes cluster.
+This project demonstrates a Node.js "Hello World" application deployed on an Azure Kubernetes Service (AKS) cluster.
 
-Using Docker, I containerized the app, pushed the Docker image to Docker Hub which made it accessible to the Azure Kubernetes Service (AKS).
+## Overview
 
-Then, in AKS, I created a cluster and deployed my app, scaling it effortlessly.
+- Containerized a simple Node.js application using Docker.
+- Pushed the container image to Docker Hub.
+- Used Terraform to provision an AKS cluster and deployed the application.
+- Utilized Kubernetes resources like Deployments and Services to manage the application.
+- Exposed the application to the internet using a LoadBalancer service, which assigned an external IP address.
 
-Finally, I exposed it to the internet with a LoadBalancer, which provided an external IP to access the app.
+## Usage
 
-The result? A fully functional web application, accessible globally, demonstrating my skills in cloud-native technologies and container orchestration with Kubernetes.
+To deploy this project to your AKS cluster:
+
+1. Clone the repository
+2. Navigate to the project directory
+3. Run `terraform init` to initialize Terraform
+4. Run `terraform apply` to apply the infrastructure
+5. Use `kubectl` to interact with your cluster and deployed services
+
+Note: Ensure your `terraform.tfvars` file with sensitive variables is secure and not checked into version control.
