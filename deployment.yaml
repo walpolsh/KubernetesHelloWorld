@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-express
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-express
+  template:
+    metadata:
+      labels:
+        app: hello-world-express
+    spec:
+      containers:
+        - name: hello-world-express
+          image: walpolsh/hello-world-express:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
